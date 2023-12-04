@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+    <header>
+        <h1>Login</h1>
+    </header>
+
+    <div id="search-container">
+        <form  id="company-form">
+            <div class="input">
+                <input type="text" name="username" id="username" placeholder="Username" required><br>
+                <input type="password" placeholder="passsword" required><br>
+                <input type="submit" value="LOGIN" id="save" onclick="validate()">
+            </div>
+        </form>
+    </div>
+</body>
+<script>
+    function validate()
+        {
+            var username=document.getElementById("username").value;
+            var password=document.getElementById("password").value;
+            if(username=="username"&& password=="password")
+            {
+
+                alert("login succesfully");
+                window.location.href = "home.html";
+
+                return false;
+
+            }
+            else
+            {
+                alert("login failed");
+                return false;
+        }
+
+    }
+</script>
+</html>
