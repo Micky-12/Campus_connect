@@ -1,0 +1,106 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+    <header>
+        <h1>Register as Company</h1>
+    </header>
+
+    <div id="search-container">
+        <form  id="company-form">
+            <div class="input">
+                <input type="text" name="name" id="name" placeholder="Company Name" required><br>
+                <input type="text" name="address" id="address" placeholder="Company Adderss" required><br>
+                <input type="text" name="Industry" id="Industry" placeholder="Industry" required><br>
+                <input type="text" name="desc_company" id="desc_company" placeholder="About the company" required><br>
+                <input type="email" name="email" id="email" placeholder="Official email" required><br>
+                <input type="password" name="password" id="password" placeholder="Create passsword" required><br>
+                <input type="password" placeholder="Confirm passsword" required><br>
+                <input type="number" name="contact" id="contact" placeholder="Contact" required><br>
+                <input type="submit" value="Submit" id="save" onclick="saveData()">
+            </div>
+        </form>
+    </div>
+</body>
+<script>
+    function saveData(){
+        let form = document.getElementById('company-form')
+        let name =document.getElementById('name').value //id
+        let address =document.getElementById('address').value
+        let Industry =document.getElementById('Industry').value
+        let description =document.getElementById('desc_company').value
+        let email =document.getElementById('email').value
+        let contact =document.getElementById('contact').value
+    
+        localStorage.setItem("name",name);
+        localStorage.setItem("address",address);
+        localStorage.setItem("Industry",Industry);
+        localStorage.setItem("desc_company",description);
+        localStorage.setItem("email",email);
+        localStorage.setItem("contact",contact);
+    
+    };
+
+     form.addEventListener('submit',(e)=>{
+                e.preventDefault();
+                validateInputs();
+                // add location of home page
+        });
+      /*  const setError = (element, message)=>{
+            let inputControl=element.parentElement;
+            let errorDisplay = inputControl.querySelector('.error');
+
+            errorDisplay.innerText=message;
+            inputControl.classList.add('error');
+            inputControl.classList.remove('success');
+        };
+        const setSuccess = element=>{
+            let inputControl=element.parentElement;
+            let errorDisplay = inputControl.querySelector('.error');
+
+            errorDisplay.innerText='';
+            inputControl.classList.add('success');
+            inputControl.classList.remove('error');
+        };
+        const validateInputs=() =>{
+            let name =document.getElementById('name').value.trim(); //id
+            let address =document.getElementById('address').value.trim();
+            let state =document.getElementById('state').value.trim();
+            let email =document.getElementById('email').value.trim();
+            let contact =document.getElementById('contact').value.trim();
+
+            if(name===''){
+                setError(name, 'Username required');
+            }
+            else{
+                setSuccess(name);
+            }
+            if(address===''){
+                setError(address, 'address required');
+            }
+            else{
+                setSuccess(address);
+            }
+            if(email===''){
+                setError(email, 'email required');
+            }
+            else{
+                setSuccess(email);
+            }
+            if(password===''){
+                setError(password, 'password required');
+            }
+            else{
+                setSuccess(password);
+            }
+        } */
+</script>
+
+</html>

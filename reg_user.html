@@ -1,0 +1,103 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+    <header>
+        <h1>Register as Candidate</h1>
+    </header>
+
+    <div id="search-container">
+        <form  id="candidate-form">
+            <div class="input">
+                <input type="text" name="candidate_name" id="candidate_name" placeholder="Name" required><br>
+                <input type="email" name="email" id="email" placeholder="Official email" required><br>
+                <input type="number" name="contact" id="contact" placeholder="Contact" required><br>
+                <input type="text" name="username" id="username" placeholder="create username" required><br>
+                <input type="password" name="password" id="password" placeholder="Confirm passsword" required><br>
+                <input type="password" placeholder="Confirm passsword" required><br>
+                <input type="submit" value="Submit" id="save" onclick="saveData()">
+            </div>
+        </form>
+    </div>
+</body>
+<script>
+    function saveData(){
+        let form = document.getElementById('candidate-form')
+        let candidate_name =document.getElementById('candidate_name').value //id
+        let username =document.getElementById('username').value
+        let password =document.getElementById('password').value
+        let email =document.getElementById('email').value
+        let contact =document.getElementById('contact').value
+
+        let user
+    
+        localStorage.setItem("candidate_name",candidate_name);
+        localStorage.setItem("username",username);
+        localStorage.setItem("password",password);
+        localStorage.setItem("email",email);
+        localStorage.setItem("contact",contact);
+    
+    };
+
+     form.addEventListener('submit',(e)=>{
+                e.preventDefault();
+                //validateInputs();
+        });
+      /*  const setError = (element, message)=>{
+            let inputControl=element.parentElement;
+            let errorDisplay = inputControl.querySelector('.error');
+
+            errorDisplay.innerText=message;
+            inputControl.classList.add('error');
+            inputControl.classList.remove('success');
+        };
+        const setSuccess = element=>{
+            let inputControl=element.parentElement;
+            let errorDisplay = inputControl.querySelector('.error');
+
+            errorDisplay.innerText='';
+            inputControl.classList.add('success');
+            inputControl.classList.remove('error');
+        };
+        const validateInputs=() =>{
+            let name =document.getElementById('name').value.trim(); //id
+            let address =document.getElementById('address').value.trim();
+            let state =document.getElementById('state').value.trim();
+            let email =document.getElementById('email').value.trim();
+            let contact =document.getElementById('contact').value.trim();
+
+            if(name===''){
+                setError(name, 'Username required');
+            }
+            else{
+                setSuccess(name);
+            }
+            if(address===''){
+                setError(address, 'address required');
+            }
+            else{
+                setSuccess(address);
+            }
+            if(email===''){
+                setError(email, 'email required');
+            }
+            else{
+                setSuccess(email);
+            }
+            if(password===''){
+                setError(password, 'password required');
+            }
+            else{
+                setSuccess(password);
+            }
+        } */
+</script>
+
+</html>

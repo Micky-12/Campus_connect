@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Campus Connect</h1>
+        <h2>Home</h2>
+    </header>
+    <div id="Jobs" class="job_post">
+        <p>Search by:</p>
+            <input type="text" name="search_company" id="search_company" placeholder="Search by Company"><br>
+            <input type="submit" value="Search" onclick="search()">
+            <template data-user-template>
+                <div class="card">
+                  <div class="header" data-header></div>
+                  <div class="body" data-body></div>
+                </div>
+              </template>
+            <p>Or</p>
+            <input type="text" name="search_job" id="search_job" placeholder="Search by Job"><br>        
+            <input type="submit" value="Search" >
+            <template data-user-template>
+                <div class="card">
+                  <div class="header" data-header></div>
+                  <div class="body" data-body></div>
+                </div>
+              </template>
+        </form>
+
+
+    </div>
+
+  <!--  <div id="search-container">
+        <form id="search-form">
+            <input type="text" class="search-company" id="search_company" placeholder="Company">
+            
+            <select id="company" name="company" class="options1">
+                <option value="IBM">IBM</option>
+                <option value="Amazon">Amazon</option>
+                <option value="Tata Consultancy">Tata Consultancy</option>
+            </select>
+
+            <input type="text" class="search-designation" id="search_designation" placeholder="designation">
+            <select id="designation" name="designation" class="options2">
+                <option value="Tester">Tester</option>
+                <option value="Developer">Developer</option>
+                <option value="Manager">Manager</option>
+            </select>
+
+            <input type="button" value="Search" onclick="search()">
+        </form>
+
+        <div id="search-results">
+            
+        </div>
+    </div>
+
+    <script>
+        function search() {
+            var company = document.getElementById('company').value;
+            var designation = document.getElementById('designation').value;
+
+            // Send a request to the Node.js server
+            fetch('/search', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ company, designation }),
+            })
+            .then(response => response.json())
+            .then(data => {
+                var resultsContainer = document.getElementById('search-results');
+                resultsContainer.innerHTML = '<h2>Job Details</h2>';
+                resultsContainer.innerHTML += '<p>Company: ' + data.company + '</p>';
+                resultsContainer.innerHTML += '<p>Vacancies: ' + data.vacancies + '</p>';
+                resultsContainer.innerHTML += '<p>Prerequisites: ' + data.prerequisites + '</p>';
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        }
+    </script>-->
+
+</body>
+</html>
